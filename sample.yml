@@ -1,0 +1,31 @@
+Param:  
+  - ConfigId : testDB1.employees
+    Conf:
+      Endpoint: 
+      Port: 3306
+      User: adm
+      Pass: 
+      Database: employees
+      TableList:
+      Queries:
+        - | 
+          select 
+          *
+          from employees
+        - | 
+          select
+          *
+          from dept_emp
+
+  - ConfigId : testDB1.sysbench
+    Conf:
+      Endpoint: 
+      Port: 3306
+      User: adm
+      Pass: 
+      Database: sysbench
+      TableList:
+        - sbtest1
+        - sbtest2
+        - sbtest3
+        - sbtest4
