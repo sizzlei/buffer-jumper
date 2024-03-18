@@ -1,8 +1,3 @@
-# Innopump
-
-Status: Done
-Github: https://github.com/sizzlei/innopump
-
 # Overview
 
 ---
@@ -155,7 +150,7 @@ Param:
     Conf:
       Endpoint: 
       Port: 3306
-      User: kurlyadm
+      User: adm
       Pass: 
       Database: employees
       TableList:
@@ -173,7 +168,7 @@ Param:
     Conf:
       Endpoint: 
       Port: 3306
-      User: kurlyadm
+      User: adm
       Pass: 
       Database: sysbench
       TableList:
