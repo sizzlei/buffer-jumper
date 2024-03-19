@@ -143,7 +143,7 @@ func main() {
 			bufferRate = bufferStat.BufferPageRate()
 			log.Infof("Buffer Page Usage Rate : %.2f%%",bufferRate)
 			log.Info("")
-		case "postgres":
+		case "postgresql":
 			// Connect
 			pClient, err := lib.PostgreConnector(
 				dbc["Endpoint"].(string),

@@ -39,6 +39,7 @@ Param:
 
 - ConfigId : 단순 Alias 입니다.
     - Conf
+        - Engine: [mysql|postgresql]
         - Endpoint: DB 접속 Host
         - Port : DB 접속 Port
         - User: 접속 계정
@@ -164,6 +165,7 @@ INFO[0005] Turn off Buffer Cache Extension
 Param:  
   - ConfigId : testDB1.employees
     Conf:
+      Engine: mysql
       Endpoint: 
       Port: 3306
       User: adm
@@ -182,6 +184,7 @@ Param:
 
   - ConfigId : testDB1.sysbench
     Conf:
+      Engine : postgresql
       Endpoint: 
       Port: 3306
       User: adm
