@@ -1,4 +1,4 @@
-module innopump
+module buffer-jumper
 
 go 1.21.4
 

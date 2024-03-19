@@ -5,7 +5,7 @@ import (
 	"flag"
 	log "github.com/sirupsen/logrus"
 	// "fmt"
-	"innopump/lib"
+	"buffer-jumper/lib"
 	"time"
 	"strings"
 )
