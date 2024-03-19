@@ -30,7 +30,7 @@ type TableInfo struct {
 	TableRows		int64
 }
 
-func DBConnector(e string, pt int, u string, p string, d string) (*DBO, error) {
+func MySQLConnector(e string, pt int, u string, p string, d string) (*DBO, error) {
 	DSN := "%s:%s@tcp(%s:%d)/%s"
 	// Create DB Object
 	dbObj, err := sql.Open("mysql",fmt.Sprintf(DSN,u,p,e,pt,d))
@@ -140,14 +140,21 @@ func (d *DBO) GetTable(database string, tables []string)(*[]TableInfo, error) {
 
 }
 
-func (d *DBO) BufferWarmingUp(table string) (*int64, error) {
-	Query := "SELECT COUNT(*) FROM %s"
+func (d *DBO) BufferWarmingUp(table string, limit int64) (*int64, error) {
+	Query := "SELECT * FROM %s limit %d"
 	var cnt int64 
-	err := d.Client.QueryRowContext(d.Context,fmt.Sprintf(Query,table)).Scan(&cnt)
+	data, err := d.Client.QueryContext(d.Context, fmt.Sprintf(Query,table,limit))
 	if err != nil {
 		return nil, err
 	}
-	
+	defer data.Close()
+
+	cnt = 0
+	for data.Next() {
+		cnt++
+	}
+
+
 	return &cnt, nil
 }
 

@@ -1,31 +1,19 @@
 Param:  
-  - ConfigId : testDB1.employees
+  - ConfigId : test
     Conf:
+      Engine: [mysql|postgres]
       Endpoint: 
-      Port: 3306
-      User: adm
-      Pass: 
-      Database: employees
+      Port: 0000
+      User: admin
+      Pass: admin-password
+      Database: TEST
       TableList:
+        - t1
+        - t2
+        - t3
+        - t4
       Queries:
-        - | 
-          select 
-          *
-          from employees
-        - | 
-          select
-          *
-          from dept_emp
-
-  - ConfigId : testDB1.sysbench
-    Conf:
-      Endpoint: 
-      Port: 3306
-      User: adm
-      Pass: 
-      Database: sysbench
-      TableList:
-        - sbtest1
-        - sbtest2
-        - sbtest3
-        - sbtest4
+        - |
+          select 1
+        - |
+          select 2
