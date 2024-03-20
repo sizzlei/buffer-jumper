@@ -143,7 +143,7 @@ INFO[0001] Free page : 347018
 INFO[0001] ================================             
 INFO[0001] Buffer Page Usage Rate : 32.32%
 ```
-### Using Queries
+### Using postgresql
 
 ```bash
 INFO[0000] Target r1 Engine : postgres                  
